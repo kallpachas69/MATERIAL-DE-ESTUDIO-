@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - Derecho Internacional Público</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .chapter-selector {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .chapter-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .chapter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .chapter-btn.active {
+            background: white;
+            color: #1a2a6c;
+        }
+        
+        .flashcards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .flashcard {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .flashcard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .flashcard.flipped {
+            background: #f8f9fa;
+        }
+        
+        .question, .answer {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        .answer {
+            display: none;
+            color: #1a2a6c;
+            font-weight: 600;
+        }
+        
+        .flashcard.flipped .question {
+            display: none;
+        }
+        
+        .flashcard.flipped .answer {
+            display: block;
+        }
+        
+        .chapter-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #1a2a6c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .control-btn {
+            background: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .control-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .flashcards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Derecho Internacional Público</h1>
+            <p class="subtitle">Flashcards de estudio - Basado en el Tomo I</p>
+        </header>
+        
+        <div class="chapter-selector">
+            <button class="chapter-btn active" data-chapter="1">Capítulo 1</button>
+            <button class="chapter-btn" data-chapter="2">Capítulo 2</button>
+            <button class="chapter-btn" data-chapter="3">Capítulo 3</button>
+        </div>
+        
+        <div class="flashcards-container" id="flashcards-container">
+            <!-- Las flashcards se generarán aquí mediante JavaScript -->
+        </div>
+        
+        <div class="controls">
+            <button class="control-btn" id="reset-btn">Reiniciar Flashcards</button>
+            <button class="control-btn" id="flip-all-btn">Voltear Todas</button>
+        </div>
+        
+        <footer>
+            <p>Material de estudio basado en "Derecho Internacional Público - Tomo I"</p>
+        </footer>
+    </div>
+
+    <script>
+        // Datos de las flashcards por capítulo
+        const flashcardsData = {
+            1: [
+                {
+                    question: "¿Qué es el Derecho Internacional Público según la definición adoptada en el libro?",
+                    answer: "El Derecho Internacional Público es el conjunto de normas jurídicas que regulan las relaciones entre los diferentes sujetos de derecho que integran la Comunidad Internacional."
+                },
+                {
+                    question: "¿Cuál es el primer antecedente histórico de tratado internacional mencionado?",
+                    answer: "El tratado entre Eannatum, señor de Lagash, y los hombres de Umma en Mesopotamia hacia el 3100 a.C., que establecía fronteras y contaba con cláusula de arbitraje."
+                },
+                {
+                    question: "¿Qué institución griega es considerada antecedente de los cónsules?",
+                    answer: "La 'proxenia', donde el 'proxene' era el habitante de una polis que acogía y representaba a los habitantes de otra polis."
+                },
+                {
+                    question: "¿Qué aportó la Paz de Westfalia de 1648 al Derecho Internacional?",
+                    answer: "Consagró el Principio de Igualdad Jurídica de los Estados y dio origen al multilateralismo a través de tratados colectivos."
+                },
+                {
+                    question: "¿Quién es considerado el fundador del Derecho Internacional moderno?",
+                    answer: "Hugo Grocio, con su obra 'Del Derecho de la Guerra y de la Paz' publicada en 1625."
+                },
+                {
+                    question: "¿Qué característica distingue al Derecho Internacional de los derechos internos?",
+                    answer: "La ausencia de un órgano legislador centralizado, de jurisdicción obligatoria y de un órgano sancionador o coactivo."
+                },
+                {
+                    question: "¿Qué son las normas de ius cogens?",
+                    answer: "Normas imperativas de Derecho Internacional general aceptadas por la comunidad internacional que no admiten acuerdo en contrario."
+                },
+                {
+                    question: "¿Cuál es la diferencia entre Derecho Internacional Público y Privado?",
+                    answer: "El Derecho Internacional Público regula relaciones entre sujetos internacionales, mientras que el Privado regula relaciones privadas con elementos extranjeros y forma parte del derecho interno."
+                },
+                {
+                    question: "¿Qué teoría sobre el fundamento del Derecho Internacional sostiene que se basa en el consentimiento de los Estados?",
+                    answer: "Las teorías subjetivas o voluntaristas, que incluyen la doctrina de la autolimitación y de la voluntad común."
+                },
+                {
+                    question: "¿Qué papel jugó la Iglesia en el desarrollo del Derecho Internacional durante la Edad Media?",
+                    answer: "Sirvió como instancia arbitral, estableció la 'Paz de Dios' y 'Tregua de Dios', y registraba tratados, ejerciendo diversas funciones internacionales."
+                }
+            ],
+            2: [
+                {
+                    question: "¿Qué establece el artículo 38 del Estatuto de la Corte Internacional de Justicia?",
+                    answer: "Enumera las fuentes del Derecho Internacional que la Corte debe aplicar: convenciones internacionales, costumbre, principios generales de derecho, y como medios auxiliares, decisiones judiciales y doctrina."
+                },
+                {
+                    question: "¿Cuál es la diferencia entre fuentes principales y auxiliares?",
+                    answer: "Las fuentes principales (tratados, costumbre, principios generales) crean normas jurídicas, mientras que las auxiliares (jurisprudencia, doctrina) ayudan a determinar el contenido de esas normas."
+                },
+                {
+                    question: "¿Existe jerarquía entre las fuentes del Derecho Internacional según el artículo 38?",
+                    answer: "No establece una jerarquía predefinida, aunque en la práctica se aplican principios como 'lex specialis derogat generalis' y 'lex posterior derogat priori'."
+                },
+                {
+                    question: "¿Qué son las fuentes materiales del Derecho Internacional?",
+                    answer: "Son los factores sociales, políticos, económicos y morales que dan origen a las normas jurídicas, a diferencia de las fuentes formales que son los procedimientos de creación."
+                },
+                {
+                    question: "¿Qué concepción sobre las fuentes sostiene que estas emanan únicamente del consentimiento de los Estados?",
+                    answer: "La concepción positivista, que considera que las únicas fuentes son el tratado y la costumbre como expresiones del acuerdo de voluntades."
+                },
+                {
+                    question: "¿Qué fuentes no están incluidas en el artículo 38 pero son reconocidas por la doctrina moderna?",
+                    answer: "Los actos unilaterales de los Estados y los actos de las organizaciones internacionales con contenido normativo."
+                },
+                {
+                    question: "¿Qué principio permite resolver conflictos entre normas de diferentes fuentes?",
+                    answer: "El principio 'lex specialis derogat generalis' (la ley especial deroga la general) y 'lex posterior derogat priori' (la ley posterior deroga la anterior)."
+                },
+                {
+                    question: "¿Qué corriente doctrinal distingue entre fuentes creadoras y fuentes formales?",
+                    answer: "La concepción objetivista, que entiende que las fuentes creadoras son los factores histórico-político-sociológicos que sirven de sustento a las normas positivas."
+                },
+                {
+                    question: "¿Qué papel juegan las resoluciones de organizaciones internacionales como fuentes?",
+                    answer: "Pueden contribuir a la formación de la costumbre, cristalizar normas en formación o declarar normas consuetudinarias ya existentes."
+                },
+                {
+                    question: "¿Qué excepción existe a la regla de no jerarquía entre las fuentes?",
+                    answer: "Las normas de ius cogens, que por su carácter imperativo prevalecen sobre cualquier otra norma del Derecho Internacional."
+                }
+            ],
+            3: [
+                {
+                    question: "¿Qué es la costumbre internacional según el artículo 38 del Estatuto de la CIJ?",
+                    answer: "La prueba de una práctica generalmente aceptada como derecho."
+                },
+                {
+                    question: "¿Cuáles son los dos elementos constitutivos de la costumbre internacional?",
+                    answer: "El elemento material (usus o práctica constante y uniforme) y el elemento psicológico (opinio iuris sive necessitatis o convicción de obligatoriedad)."
+                },
+                {
+                    question: "¿Qué se entiende por 'opinio iuris' en la formación de la costumbre?",
+                    answer: "La convicción de los Estados de que una práctica determinada es jurídicamente obligatoria, no solo por cortesía o conveniencia."
+                },
+                {
+                    question: "¿Es necesario un largo período de tiempo para que se forme una costumbre?",
+                    answer: "No necesariamente. La jurisprudencia ha reconocido que una costumbre puede formarse en un período breve si la práctica es intensa y generalizada."
+                },
+                {
+                    question: "¿Qué es un 'objetor persistente' en el derecho consuetudinario?",
+                    answer: "Un Estado que se opone de manera expresa, pública y reiterada a una costumbre durante su periodo formativo, pudiendo así sustraerse a su aplicación."
+                },
+                {
+                    question: "¿Qué tipos de costumbre existen según su ámbito de aplicación?",
+                    answer: "Costumbre universal o general, costumbre regional, costumbre particular y costumbre bilateral."
+                },
+                {
+                    question: "¿Pueden las organizaciones internacionales contribuir a la formación de la costumbre?",
+                    answer: "Sí, a través de sus resoluciones y prácticas, que pueden reflejar o generar la opinio iuris de los Estados miembros."
+                },
+                {
+                    question: "¿Qué teoría sobre el fundamento de la costumbre fue rechazada en el Asunto de la Plataforma Continental del Mar del Norte?",
+                    answer: "La teoría del consentimiento tácito, al señalarse que las normas consuetudinarias obligan a los Estados independientemente de su consentimiento expreso o implícito."
+                },
+                {
+                    question: "¿Qué es la 'costumbre instantánea' mencionada por algunos autores?",
+                    answer: "Una costumbre que se forma muy rápidamente, como en el caso de los principios sobre el espacio ultraterrestre, aunque esta noción es criticada por parte de la doctrina."
+                },
+                {
+                    question: "¿Qué papel ha tenido la costumbre en el desarrollo histórico del Derecho Internacional?",
+                    answer: "Ha sido la fuente más antigua, fecunda y flexible, adaptándose a los cambios y permitiendo el desarrollo de normas universales en diversos campos."
+                }
+            ]
+        };
+
+        // Variables globales
+        let currentChapter = 1;
+        let allFlipped = false;
+
+        // Inicializar la aplicación
+        document.addEventListener('DOMContentLoaded', function() {
+            renderFlashcards(currentChapter);
+            
+            // Configurar event listeners para los botones de capítulo
+            document.querySelectorAll('.chapter-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Actualizar botón activo
+                    document.querySelectorAll('.chapter-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Cambiar capítulo
+                    currentChapter = parseInt(this.getAttribute('data-chapter'));
+                    renderFlashcards(currentChapter);
+                });
+            });
+            
+            // Configurar botón de reinicio
+            document.getElementById('reset-btn').addEventListener('click', function() {
+                renderFlashcards(currentChapter);
+                allFlipped = false;
+            });
+            
+            // Configurar botón de voltear todas
+            document.getElementById('flip-all-btn').addEventListener('click', function() {
+                const flashcards = document.querySelectorAll('.flashcard');
+                allFlipped = !allFlipped;
+                
+                flashcards.forEach(card => {
+                    if (allFlipped) {
+                        card.classList.add('flipped');
+                    } else {
+                        card.classList.remove('flipped');
+                    }
+                });
+            });
+        });
+
+        // Función para renderizar las flashcards
+        function renderFlashcards(chapter) {
+            const container = document.getElementById('flashcards-container');
+            container.innerHTML = '';
+            
+            const flashcards = flashcardsData[chapter];
+            
+            flashcards.forEach((card, index) => {
+                const flashcardElement = document.createElement('div');
+                flashcardElement.className = 'flashcard';
+                flashcardElement.innerHTML = `
+                    <div class="chapter-indicator">Cap. ${chapter}</div>
+                    <div class="question">${card.question}</div>
+                    <div class="answer">${card.answer}</div>
+                `;
+                
+                // Añadir evento de clic para voltear la tarjeta
+                flashcardElement.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+                
+                container.appendChild(flashcardElement);
+            });
+        }
+    </script>
+</body>
+</html>
