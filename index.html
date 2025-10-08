@@ -192,18 +192,15 @@
             font-weight: bold;
         }
         
-        .concept, .author {
-            background: #f8f9fa;
-            border-left: 4px solid #1a2a6c;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .concept h4, .author h4 {
-            color: #1a2a6c;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
+        .author-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #1a2a6c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
         }
         
         footer {
@@ -241,6 +238,7 @@
             <button class="control-btn active" data-section="glosario">Glosario</button>
             <button class="control-btn" data-section="comprension">Comprensión</button>
             <button class="control-btn" data-section="examen">Examen</button>
+            <button class="control-btn" data-section="novak">Libro de Novak</button>
             <button class="control-btn" data-section="mazzuoli">Libro de Mazzuoli</button>
             <button class="control-btn" id="flip-all-btn">Voltear Todas</button>
         </div>
@@ -583,6 +581,222 @@
             </div>
         </div>
         
+        <!-- SECCIÓN NOVAK -->
+        <div class="section" id="novak">
+            <h2>📘 Libro de Novak - Preguntas Específicas</h2>
+            
+            <h3>Fundamentos y Evolución Histórica</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">Según Novak, ¿cuál es la importancia de la Paz de Westfalia en el desarrollo del DIP?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak destaca que la Paz de Westfalia (1648) representa el <span class="highlight">punto de partida del Derecho Internacional moderno</span> porque:</p>
+                                <ul>
+                                    <li>Estableció el <strong>principio de igualdad jurídica</strong> entre los Estados</li>
+                                    <li>Consagró la <strong>soberanía estatal</strong> como principio rector</li>
+                                    <li>Inauguró el <strong>sistema de Estados</strong> como base de la comunidad internacional</li>
+                                    <li>Estableció los primeros <strong>tratados multilaterales</strong> con vocación universal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">¿Cómo caracteriza Novak el período de la Guerra Fría en el desarrollo del DIP?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak describe la Guerra Fría como un período de <span class="highlight">"estancamiento relativo pero desarrollo cualitativo"</span> del DIP, caracterizado por:</p>
+                                <ul>
+                                    <li><strong>Bipolarización</strong> de la comunidad internacional</li>
+                                    <li>Desarrollo del <strong>derecho de los conflictos armados</strong> y humanitario</li>
+                                    <li>Avances en <strong>derecho diplomático y consular</strong></li>
+                                    <li>Primeros esfuerzos de <strong>codificación</strong> a través de la Comisión de Derecho Internacional</li>
+                                    <li>Surgimiento del concepto de <strong>ius cogens</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">¿Qué papel atribuye Novak a las organizaciones internacionales en el DIP contemporáneo?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak considera a las organizaciones internacionales como <span class="highlight">"sujetos secundarios pero esenciales"</span> del DIP, destacando su papel en:</p>
+                                <ul>
+                                    <li>La <strong>creación y desarrollo</strong> de normas internacionales</li>
+                                    <li>La <strong>implementación y supervisión</strong> del cumplimiento del DI</li>
+                                    <li>La <strong>solución pacífica de controversias</strong></li>
+                                    <li>La <strong>cooperación internacional</strong> en áreas técnicas y especializadas</li>
+                                    <li>La <strong>protección de derechos humanos</strong> y humanitaria</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Teorías y Conceptos Fundamentales</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">¿Cómo aborda Novak el debate sobre el fundamento del Derecho Internacional?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak adopta una posición <span class="highlight">ecléctica y pragmática</span> sobre el fundamento del DI, reconociendo elementos de:</p>
+                                <ul>
+                                    <li><strong>Voluntarismo</strong>: El consentimiento de los Estados como base inmediata</li>
+                                    <li><strong>Objetivismo</strong>: La existencia de una comunidad internacional con valores compartidos</li>
+                                    <li><strong>Sociologismo</strong>: Las necesidades prácticas de la convivencia internacional</li>
+                                    <li><strong>Normativismo</strong>: La existencia de normas básicas como <em>pacta sunt servanda</em></li>
+                                </ul>
+                                <p>Concluye que el fundamento último está en la <span class="highlight">necesidad de orden y seguridad</span> en las relaciones internacionales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">Según Novak, ¿cuáles son las características distintivas del DIP frente a los derechos internos?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak identifica varias características distintivas del DIP:</p>
+                                <ul>
+                                    <li><strong>Sociedad descentralizada</strong>: Ausencia de órganos legislativos, ejecutivos y judiciales centralizados</li>
+                                    <li><strong>Igualdad soberana</strong>: Los sujetos principales son formalmente iguales</li>
+                                    <li><strong>Carácter consensual</strong>: Las normas se basan principalmente en el consentimiento</li>
+                                    <li><strong>Coacción difusa</strong>: Mecanismos de sanción menos estructurados</li>
+                                    <li><strong>Universalidad relativa</strong>: Algunas normas son generales, otras particulares</li>
+                                    <li><strong>Flexibilidad normativa</strong>: Mayor capacidad de adaptación y evolución</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">¿Qué importancia concede Novak a la costumbre internacional en el DIP contemporáneo?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak considera la costumbre internacional como <span class="highlight">"la columna vertebral del sistema normativo internacional"</span> por:</p>
+                                <ul>
+                                    <li>Ser fuente de <strong>normas generales</strong> aplicables a todos los Estados</li>
+                                    <li>Permitir la <strong>adaptación flexible</strong> del derecho a nuevas realidades</li>
+                                    <li>Reflejar la <strong>práctica real</strong> de los Estados en sus relaciones</li>
+                                    <li>Servir como <strong>complemento y correctivo</strong> de los tratados</li>
+                                    <li>Constituir la base de <strong>instituciones fundamentales</strong> como la inmunidad estatal</li>
+                                </ul>
+                                <p>Destaca especialmente su papel en la formación del <span class="highlight">ius cogens</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Aportes Doctrinales de Novak</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">¿Cuál es la postura de Novak sobre la jerarquía de las fuentes del DIP?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak defiende una concepción <span class="highlight">"flexible pero estructurada"</span> de la jerarquía de fuentes:</p>
+                                <ul>
+                                    <li><strong>Nivel superior</strong>: Normas de <em>ius cogens</em> y principios fundamentales</li>
+                                    <li><strong>Nivel medio</strong>: Tratados y costumbres generales</li>
+                                    <li><strong>Nivel básico</strong>: Principios generales del derecho y actos unilaterales</li>
+                                    <li><strong>Medios auxiliares</strong>: Jurisprudencia y doctrina</li>
+                                </ul>
+                                <p>Reconoce que en la práctica se aplican los principios de <span class="highlight">lex specialis</span> y <span class="highlight">lex posterior</span> para resolver conflictos normativos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">¿Cómo conceptualiza Novak la relación entre DIP y derechos humanos?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak ve los derechos humanos como <span class="highlight">"un elemento transformador del DIP clásico"</span> que ha:</p>
+                                <ul>
+                                    <li><strong>Ampliado los sujetos</strong> del DI al incluir a los individuos</li>
+                                    <li><strong>Limitado la soberanía estatal</strong> en materia de tratamiento a personas</li>
+                                    <li><strong>Creado mecanismos de protección</strong> internacional supranacionales</li>
+                                    <li><strong>Establecido estándares mínimos</strong> de comportamiento estatal</li>
+                                    <li><strong>Generado obligaciones erga omnes</strong> para la comunidad internacional</li>
+                                </ul>
+                                <p>Considera que los derechos humanos representan la <span class="highlight">"constitucionalización"</span> del orden internacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="author-tag">Novak</div>
+                            <div class="question-text">¿Qué perspectiva ofrece Novak sobre el futuro del DIP en un mundo globalizado?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Novak presenta una visión <span class="highlight">"optimista pero realista"</span> sobre el futuro del DIP:</p>
+                                <ul>
+                                    <li><strong>Mayor institucionalización</strong> de la comunidad internacional</li>
+                                    <li><strong>Fortalecimiento</strong> de la justicia internacional</li>
+                                    <li><strong>Expansión temática</strong> hacia nuevos desafíos globales</li>
+                                    <li><strong>Tensión continua</strong> entre soberanía y cooperación</li>
+                                    <li><strong>Importancia creciente</strong> del soft law y la regulación flexible</li>
+                                    <li><strong>Desafíos</strong> planteados por actores no estatales y nuevas tecnologías</li>
+                                </ul>
+                                <p>Concluye que el DIP seguirá evolucionando para responder a las <span class="highlight">"nuevas realidades de un mundo interdependiente"</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- SECCIÓN MAZZUOLI -->
         <div class="section" id="mazzuoli">
             <h2>📚 Libro de Mazzuoli - Preguntas Específicas</h2>
@@ -592,6 +806,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">Según Mazzuoli, ¿cuál es la naturaleza del Derecho Internacional Público?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -607,6 +822,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">¿Cómo aborda Mazzuoli el problema de las fuentes del Derecho Internacional?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -629,6 +845,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">¿Qué posición sostiene Mazzuoli sobre la jerarquía de las fuentes?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -647,6 +864,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">¿Cómo caracteriza Mazzuoli las teorías voluntaristas?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -667,6 +885,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">¿Qué enfoque adopta Mazzuoli respecto al iusnaturalismo contemporáneo?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -682,6 +901,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">¿Cuál es la postura de Mazzuoli sobre la teoría objetivista sociológica?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -700,6 +920,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">¿Qué innovaciones introduce Mazzuoli en el estudio de las fuentes del DIP?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -721,6 +942,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">¿Cómo aborda Mazzuoli la relación entre Derecho Internacional y Derecho Interno?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -741,6 +963,7 @@
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
+                            <div class="author-tag">Mazzuoli</div>
                             <div class="question-text">¿Qué importancia concede Mazzuoli a la jurisprudencia internacional?</div>
                             <div class="hint">Haz clic para ver la respuesta</div>
                         </div>
@@ -762,7 +985,7 @@
         </div>
         
         <footer>
-            <p>Compendio de estudio de Derecho Internacional Público - Incluye contenido basado en la obra de Valerio de Oliveira Mazzuoli</p>
+            <p>Compendio de estudio de Derecho Internacional Público - Incluye contenido basado en las obras de Fabián Novak y Valerio de Oliveira Mazzuoli</p>
             <p>Haz clic en cualquier tarjeta para ver la respuesta - Generado para fines académicos</p>
         </footer>
     </div>
