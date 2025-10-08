@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derecho Internacional Público - Fundamentos y Teorías</title>
+    <title>Derecho Internacional Público - Compendio Completo</title>
     <style>
         * {
             margin: 0;
@@ -71,33 +71,9 @@
             transform: translateY(-2px);
         }
         
-        .chapter-selector {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-        
-        .chapter-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
+        .control-btn.active {
+            background: #1a2a6c;
             color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .chapter-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        .chapter-btn.active {
-            background: white;
-            color: #1a2a6c;
         }
         
         .section {
@@ -106,6 +82,11 @@
             padding: 25px;
             margin-bottom: 30px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
         }
         
         h2 {
@@ -211,17 +192,6 @@
             font-weight: bold;
         }
         
-        .chapter-indicator {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #1a2a6c;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-        }
-        
         .concept, .author {
             background: #f8f9fa;
             border-left: 4px solid #1a2a6c;
@@ -263,286 +233,605 @@
     <div class="container">
         <header>
             <h1>Derecho Internacional Público</h1>
-            <p class="subtitle">Fundamentos, Teorías y Características - Flashcards Interactivas</p>
+            <p class="subtitle">Compendio Completo - Flashcards Interactivas</p>
             <p>Haz clic en cualquier tarjeta para ver la respuesta</p>
         </header>
         
         <div class="controls">
-            <button class="control-btn" id="reset-btn">Reiniciar Flashcards</button>
+            <button class="control-btn active" data-section="glosario">Glosario</button>
+            <button class="control-btn" data-section="comprension">Comprensión</button>
+            <button class="control-btn" data-section="examen">Examen</button>
+            <button class="control-btn" data-section="mazzuoli">Libro de Mazzuoli</button>
             <button class="control-btn" id="flip-all-btn">Voltear Todas</button>
-            <button class="control-btn" id="mazzuoli-btn">Libro de Mazzuoli</button>
         </div>
         
-        <div class="chapter-selector">
-            <button class="chapter-btn active" data-chapter="1">Fundamentos del DIP</button>
-            <button class="chapter-btn" data-chapter="2">Teorías Voluntaristas</button>
-            <button class="chapter-btn" data-chapter="3">Teorías Objetivistas</button>
-            <button class="chapter-btn" data-chapter="4">Características del DIP</button>
+        <!-- GLOSARIO -->
+        <div class="section active" id="glosario">
+            <h2>📘 Glosario de Términos</h2>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Aggiornamento</div>
+                            <div class="hint">Haz clic para ver el significado</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Significado:</strong> Término italiano que significa "actualización" o "puesta al día".</p>
+                                <p><strong>Contexto DIP:</strong> Se refiere al proceso de modernización y adaptación constante que experimentan las fuentes del Derecho Internacional Público para mantenerse relevantes ante los cambios en la sociedad internacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Stare Decisis</div>
+                            <div class="hint">Haz clic para ver el significado</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Significado:</strong> Principio jurídico del Common Law que significa "mantenerse en lo decidido".</p>
+                                <p><strong>Características:</strong> Obliga a los tribunales a seguir sus precedentes judiciales. Busca seguridad jurídica y uniformidad.</p>
+                                <p><strong>Diferencia en DIP:</strong> En Derecho Internacional, la jurisprudencia es solo medio auxiliar (no obligatorio como en Common Law).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Pacta Sunt Servanda</div>
+                            <div class="hint">Haz clic para ver el significado</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Significado:</strong> Locución latina que significa "lo pactado obliga".</p>
+                                <p><strong>Definición Jurídica:</strong> Es un principio general del derecho que constituye la base normativa de toda la fuerza obligatoria de los tratados internacionales.</p>
+                                <p><strong>Función en DIP:</strong> Actúa como la norma fundamental que da validez a todo el sistema convencional.</p>
+                                <p><strong>Fuente Positiva:</strong> Está positivizado en el <span class="highlight">Artículo 26 de la Convención de Viena sobre el Derecho de los Tratados de 1969</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Opinio Juris Sive Necessitatis</div>
+                            <div class="hint">Haz clic para ver el significado</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Significado:</strong> Locución latina que significa "la convicción de que una práctica es obligatoria por derecho o por necesidad".</p>
+                                <p><strong>Definición Jurídica:</strong> Es el <span class="highlight">elemento subjetivo o psicológico</span> necesario para la formación de una costumbre internacional.</p>
+                                <p><strong>Función:</strong> Distingue un mero uso o práctica habitual de una verdadera norma consuetudinaria obligatoria.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Comitas Gentium</div>
+                            <div class="hint">Haz clic para ver el significado</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Significado:</strong> Locución latina que significa "cortesía entre naciones" o "cortesía internacional".</p>
+                                <p><strong>Definición Jurídica:</strong> Se refiere a las prácticas, usos y cortesías que los Estados se observan entre sí de manera habitual y voluntaria, <span class="highlight">pero sin la convicción de que sean jurídicamente obligatorias</span>.</p>
+                                <p><strong>Diferencia Crucial con la Costumbre Internacional:</strong> Es el concepto opuesto al <span class="highlight">opinio juris</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Ex Injuria Non Oritur Jus</div>
+                            <div class="hint">Haz clic para ver el significado</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Significado:</strong> Locución latina que significa "de un acto ilícito no nace un derecho".</p>
+                                <p><strong>Definición Jurídica:</strong> Es un principio general del derecho que establece que un Estado <span class="highlight">no puede adquirir un derecho o un beneficio jurídico</span> de su propio acto ilícito internacional.</p>
+                                <p><strong>Función en DIP:</strong> Actúa como una garantía de coherencia y legitimidad del sistema.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
-        <div class="flashcards-container" id="flashcards-container">
-            <!-- Las flashcards se generarán aquí mediante JavaScript -->
+        <!-- PREGUNTAS DE COMPRENSIÓN -->
+        <div class="section" id="comprension">
+            <h2>📇 Flashcards de Comprensión</h2>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Cuál es la "lista originaria" de las fuentes del DIP y qué problema de jerarquía presenta?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>La lista originaria se encuentra en el <span class="highlight">Artículo 38 del Estatuto de la Corte Internacional de Justicia (CIJ)</span>. Este artículo enumera, en un orden de aplicación <span class="highlight">relativo y no taxativo</span>, las fuentes que la Corte debe aplicar: 1) tratados, 2) costumbre, 3) principios generales de derecho, y 4) medios auxiliares (jurisprudencia y doctrina).</p>
+                                <p>El problema de jerarquía es que el orden no es rígido; una norma de <span class="highlight">jus cogens</span> o una costumbre general puede prevalecer sobre un tratado en caso de conflicto, y la lista no incluye explícitamente otras fuentes modernas como los actos unilaterales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Según la doctrina clásica (Calvo, Nisot), ¿por qué se considera a los tratados la fuente "más cierta" del DIP?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Porque son la manifestación más clara del <span class="highlight">derecho positivo escrito</span>. Al estar formalizados por escrito, ofrecen <span class="highlight">seguridad jurídica, previsibilidad y certeza</span>, ya que sus términos son explícitos y verificables.</p>
+                                <p>Esto elimina la ambigüedad y los problemas de prueba asociados a la costumbre internacional, que es consuetudinaria y a menudo objeto de controversia sobre su existencia y alcance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué dos elementos son esenciales para la formación de la costumbre internacional?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>1. Elemento Material (Objetivo):</strong> Es la <span class="highlight">práctica estatal generalizada, uniforme y repetida</span>. Se manifiesta en actos concretos de los Estados (leyes, comportamientos, declaraciones). Responde a la pregunta: <span class="highlight">¿Qué hacen los Estados?</span></p>
+                                <p><strong>2. Elemento Subjetivo (Psicológico - Opinio Juris):</strong> Es la <span class="highlight">convicción de que dicha práctica es obligatoria por derecho</span>. Es la creencia de que se actúa por una necesidad jurídica, no por mera cortesía o conveniencia. Responde a la pregunta: <span class="highlight">¿Por qué lo hacen?</span></p>
+                                <p>Ambos elementos deben probarse de manera cumulativa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Desglose el proceso CLÁSICO y el proceso CONTEMPORÁNEO de formación de la costumbre internacional.</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Proceso Clásico ("De abajo hacia arriba"):</strong> Es lento y espontáneo. Primero surge una <span class="highlight">práctica prolongada y repetida</span> entre los Estados (elemento material). Con el tiempo, de esta práctica surge gradualmente la <span class="highlight">convicción de su obligatoriedad jurídica</span> (opinio juris). <em>Ejemplo: La inmunidad soberana de los Estados.</em></p>
+                                <p><strong>Proceso Contemporáneo ("De arriba hacia abajo" o "Costumbre Instantánea"):</strong> Puede ser rápido. Primero se manifiesta el <span class="highlight">opinio juris colectivo</span> (ej. en una resolución de la ONU), que declara la existencia o necesidad de una norma. Luego, la <span class="highlight">práctica estatal se alinea</span> con esta convicción. <em>Ejemplo: La no apropiación del espacio ultraterrestre.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué es la comitas gentium y en qué se diferencia fundamentalmente de la costumbre internacional?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>La <span class="highlight">comitas gentium</span> es la <span class="highlight">"cortesía entre naciones"</span>, es decir, prácticas y usos que los Estados se observan entre sí de forma voluntaria por conveniencia o reciprocidad, <span class="highlight">pero sin la convicción de que sean jurídicamente obligatorias</span>.</p>
+                                <p>La diferencia fundamental con la costumbre internacional es la <span class="highlight">ausencia del opinio juris</span>. El incumplimiento de la comitas no genera responsabilidad internacional, solo un posible malestar diplomático. <em>Ejemplo: Los saludos ceremoniales entre buques de guerra.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Desde una perspectiva crítica (como la de Lambert), ¿por qué los tratados, a pesar de su "certeza", pueden reflejar desequilibrios en el DIP?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Porque el contenido sustantivo de un tratado es el resultado de una negociación que está influenciada por las <span class="highlight">fuentes materiales</span>, es decir, por los factores de poder real (económico, político, militar) de los Estados participantes.</p>
+                                <p>Un Estado hegemónico o un bloque de países poderosos tiene una capacidad muy superior para imponer sus intereses y su visión del derecho en el texto final del tratado. Así, un tratado puede ser "cierto" en su forma, pero injusto o desigual en su contenido, reflejando la "ley del más fuerte".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PREGUNTAS DE EXAMEN -->
+        <div class="section" id="examen">
+            <h2>✅ Preguntas de Examen</h2>
+            
+            <h3>Preguntas Textuales y de Conceptos Clave</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué artículo y de qué documento contienen la lista clásica y originaria de las fuentes del Derecho Internacional Público?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Artículo 38 del Estatuto de la Corte Internacional de Justicia (CIJ)</strong>.</p>
+                                <p>Este artículo es la "hoja de ruta" oficial que tiene la Corte para saber en qué debe basarse para tomar sus decisiones. Es el catálogo más autorizado de fuentes del DIP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Según el texto, ¿cuál es la definición de "Fuentes Materiales" del Derecho?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Son el <span class="highlight">examen del conjunto de factores sociológicos, económicos, ecológicos, psicológicos y culturales que condicionan la decisión del poder en la creación del derecho</span>.</p>
+                                <p>Según Miguel Reale, se refieren a los factores reales (sociales, económicos, etc.) que determinan el contenido de una norma, aunque él critica esta distinción argumentando que para el jurista solo existen las fuentes formales (lo ya positivado).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué dos elementos son esenciales para la formación de la costumbre internacional según la doctrina clásica?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>1. Elemento Material (Objetivo):</strong> La práctica estatal generalizada, uniforme y repetida.</p>
+                                <p><strong>2. Elemento Subjetivo (Opinio Juris Sive Necessitatis):</strong> La convicción de que dicha práctica es obligatoria por derecho.</p>
+                                <p>Ambos elementos deben estar presentes de forma cumulativa para que exista una verdadera costumbre internacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Preguntas Explicativas y de Comprensión</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Explique con sus propias palabras la diferencia fundamental entre el proceso CLÁSICO y el proceso CONTEMPORÁNEO de formación de la costumbre internacional. Dé un ejemplo de cada uno.</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Proceso Clásico ("De abajo hacia arriba"):</strong> Es lento y espontáneo. Secuencia: <span class="highlight">práctica → opinio juris</span>. Primero surge una práctica prolongada entre Estados, y con el tiempo surge la convicción de su obligatoriedad. <em>Ejemplo: La inmunidad soberana estatal se formó a lo largo de siglos.</em></p>
+                                <p><strong>Proceso Contemporáneo ("De arriba hacia abajo" o "Costumbre Instantánea"):</strong> Puede ser rápido. Secuencia: <span class="highlight">opinio juris → práctica</span>. Primero se manifiesta la convicción colectiva (ej. en resoluciones de la ONU), luego la práctica se alinea. <em>Ejemplo: La no apropiación del espacio ultraterrestre se consolidó rápidamente en los años 60.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Por qué el opinio juris es el elemento más difícil de probar en la costumbre internacional? Mencione al menos dos formas a través de las cuales se puede demostrar su existencia.</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>El <span class="highlight">opinio juris</span> es el elemento más difícil de probar porque requiere demostrar la <span class="highlight">convicción interna de los Estados</span> de que una práctica es obligatoria por derecho, no por cortesía o conveniencia.</p>
+                                <p><strong>Formas de demostrarlo:</strong></p>
+                                <p>1. <span class="highlight">Declaraciones oficiales explícitas</span> donde los Estados invocan la norma como "derecho internacional consuetudinario".</p>
+                                <p>2. <span class="highlight">Protestas formales</span> cuando un Estado viola la práctica, reconociendo implícitamente su carácter obligatorio.</p>
+                                <p>3. <span class="highlight">Instrumentos internacionales</span> como resoluciones de la ONU que reflejen el consenso sobre la existencia de la norma.</p>
+                                <p>4. <span class="highlight">Ausencia de protesta</span> cuando un Estado actúa de cierta manera y los demás no se oponen, lo que puede interpretarse como aceptación tácita.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Preguntas de Doctrina y Autores</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué autor defendió que "los tratados son incontestablemente la fuente más importante y más irrecusable del derecho internacional"? ¿A qué escuela de pensamiento pertenece esta idea?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p><strong>Charles Calvo</strong> defendió esta posición.</p>
+                                <p>Esta idea pertenece a la escuela del <span class="highlight">Positivismo Voluntarista o Escuela Clásica</span>, que privilegia y prioriza a los tratados internacionales por encima de otras fuentes como la costumbre, considerándolos la fuente "más cierta" del DIP por ser derecho positivo escrito que ofrece seguridad jurídica.</p>
+                                <p>Joseph Nisot también compartía esta visión, calificando a los tratados como la fuente "más cierta" del Derecho Internacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Cuál es la diferencia esencial entre la comitas gentium (cortesía internacional) y la consuetudo (costumbre internacional)?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>La diferencia esencial radica en la <span class="highlight">presencia o ausencia del opinio juris</span>:</p>
+                                <p><strong>Comitas Gentium (Cortesía Internacional):</strong></p>
+                                <ul>
+                                    <li>Prácticas voluntarias entre Estados</li>
+                                    <li>Basadas en reciprocidad o conveniencia</li>
+                                    <li><span class="highlight">Sin opinio juris</span> (sin convicción de obligatoriedad jurídica)</li>
+                                    <li>Su incumplimiento no genera responsabilidad internacional</li>
+                                    <li><em>Ejemplo: Saludos ceremoniales entre buques de guerra</em></li>
+                                </ul>
+                                <p><strong>Consuetudo (Costumbre Internacional):</strong></p>
+                                <ul>
+                                    <li>Práctica general aceptada como derecho</li>
+                                    <li><span class="highlight">Con opinio juris</span> (con convicción de obligatoriedad jurídica)</li>
+                                    <li>Su incumplimiento genera responsabilidad internacional</li>
+                                    <li><em>Ejemplo: Norma de la Zona Económica Exclusiva de 200 millas</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN MAZZUOLI -->
+        <div class="section" id="mazzuoli">
+            <h2>📚 Libro de Mazzuoli - Preguntas Específicas</h2>
+            
+            <h3>Fundamentos del Derecho Internacional</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">Según Mazzuoli, ¿cuál es la naturaleza del Derecho Internacional Público?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli concibe el Derecho Internacional Público como un <span class="highlight">sistema jurídico autónomo y completo</span> que regula las relaciones entre los sujetos de la comunidad internacional, con características propias que lo distinguen de los derechos internos.</p>
+                                <p>Destaca su carácter <span class="highlight">descentralizado</span> y basado en la <span class="highlight">coordinación</span> más que en la subordinación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Cómo aborda Mazzuoli el problema de las fuentes del Derecho Internacional?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli sigue la clasificación del <span class="highlight">artículo 38 del Estatuto de la CIJ</span> pero con una perspectiva actualizada que incluye:</p>
+                                <ul>
+                                    <li>Tratados internacionales</li>
+                                    <li>Costumbre internacional</li>
+                                    <li>Principios generales del derecho</li>
+                                    <li>Actos unilaterales de los Estados</li>
+                                    <li>Decisiones de organizaciones internacionales</li>
+                                    <li>Jurisprudencia y doctrina como medios auxiliares</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué posición sostiene Mazzuoli sobre la jerarquía de las fuentes?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli reconoce que no existe una jerarquía rígida entre las fuentes, pero destaca la <span class="highlight">preeminencia del ius cogens</span> como normas imperativas que prevalecen sobre cualquier otra norma.</p>
+                                <p>También aplica los principios de <span class="highlight">lex specialis derogat generalis</span> y <span class="highlight">lex posterior derogat priori</span> para resolver conflictos entre normas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Teorías y Doctrinas</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Cómo caracteriza Mazzuoli las teorías voluntaristas?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli describe las teorías voluntaristas como aquellas que <span class="highlight">fundamentan la obligatoriedad del DI en la voluntad de los Estados</span>, ya sea mediante:</p>
+                                <ul>
+                                    <li><strong>Autolimitación</strong> (Jellinek)</li>
+                                    <li><strong>Voluntad común</strong> (Triepel)</li>
+                                    <li><strong>Consentimiento tácito</strong></li>
+                                </ul>
+                                <p>Critica su insuficiencia para explicar normas que obligan a Estados que no han consentido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué enfoque adopta Mazzuoli respecto al iusnaturalismo contemporáneo?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli valora el <span class="highlight">neoiusnaturalismo</span> como una corriente que rescata valores universales y principios de justicia, pero dentro de un marco positivista que reconoce la importancia del derecho positivo.</p>
+                                <p>Destaca autores como <span class="highlight">Verdross, Lauterpacht y Jiménez de Aréchaga</span> como representantes de esta tendencia que busca conciliar el derecho natural con la realidad del derecho positivo internacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Cuál es la postura de Mazzuoli sobre la teoría objetivista sociológica?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli reconoce el aporte de la teoría sociológica al <span class="highlight">contextualizar el derecho en la realidad social internacional</span>, pero advierte sobre el riesgo de reducir el derecho a meros factores de poder.</p>
+                                <p>Valora especialmente la contribución de <span class="highlight">Georges Scelle</span> y su teoría del "dédoublement fonctionnel" para explicar cómo los órganos estatales cumplen funciones internacionales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Aportes Doctrinales de Mazzuoli</h3>
+            <div class="flashcards-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué innovaciones introduce Mazzuoli en el estudio de las fuentes del DIP?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli introduce varias innovaciones en el estudio de las fuentes:</p>
+                                <ul>
+                                    <li><strong>Actualización del concepto de costumbre</strong>, reconociendo la "costumbre instantánea"</li>
+                                    <li><strong>Revalorización de los principios generales</strong> como fuente autónoma</li>
+                                    <li><strong>Análisis sistemático de los actos unilaterales</strong> y su fuerza obligatoria</li>
+                                    <li><strong>Integración del soft law</strong> en el estudio de las fuentes</li>
+                                    <li><strong>Enfoque práctico</strong> con numerosos ejemplos de jurisprudencia internacional</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Cómo aborda Mazzuoli la relación entre Derecho Internacional y Derecho Interno?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli adopta una posición <span class="highlight">moderada en el debate monismo-dualismo</span>, reconociendo que:</p>
+                                <ul>
+                                    <li>El DI y el derecho interno son <strong>sistemas separados pero interconectados</strong></li>
+                                    <li>La implementación del DI depende de los <strong>mecanismos constitucionales de cada Estado</strong></li>
+                                    <li>Existe una <strong>tendencia hacia la primacía del DI</strong> en materias de su competencia</li>
+                                    <li>Los tribunales internacionales tienen la <strong>última palabra</strong> sobre la interpretación del DI</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="question-text">¿Qué importancia concede Mazzuoli a la jurisprudencia internacional?</div>
+                            <div class="hint">Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="answer-text">
+                                <p>Mazzuoli otorga <span class="highlight">gran importancia a la jurisprudencia internacional</span> como:</p>
+                                <ul>
+                                    <li><strong>Medio auxiliar para determinar las reglas de derecho</strong> (art. 38 del Estatuto de la CIJ)</li>
+                                    <li><strong>Factor de desarrollo progresivo del DI</strong> a través de la interpretación judicial</li>
+                                    <li><strong>Mecanismo de integración del sistema</strong> al resolver lagunas y antinomias</li>
+                                    <li><strong>Fuente de seguridad jurídica</strong> mediante la aplicación uniforme del derecho</li>
+                                </ul>
+                                <p>Destaca especialmente la contribución de la <span class="highlight">Corte Internacional de Justicia</span> en la evolución del DI contemporáneo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <footer>
-            <p>Material de estudio basado en "Derecho Internacional Público - Tomo I"</p>
+            <p>Compendio de estudio de Derecho Internacional Público - Incluye contenido basado en la obra de Valerio de Oliveira Mazzuoli</p>
             <p>Haz clic en cualquier tarjeta para ver la respuesta - Generado para fines académicos</p>
         </footer>
     </div>
 
     <script>
-        // Datos de las flashcards por capítulo
-        const flashcardsData = {
-            1: [
-                {
-                    question: "¿Qué es el Derecho Internacional Público según la definición adoptada en el libro?",
-                    answer: "El Derecho Internacional Público es el conjunto de normas jurídicas que regulan las relaciones entre los diferentes sujetos de derecho que integran la Comunidad Internacional."
-                },
-                {
-                    question: "¿Cuáles son los tres presupuestos necesarios para la existencia del Derecho Internacional?",
-                    answer: "1) La existencia de una pluralidad de sujetos; 2) La interrelación entre estos sujetos; 3) El sometimiento de estos sujetos a un ordenamiento jurídico común."
-                },
-                {
-                    question: "¿Qué significa que el Derecho Internacional es un 'derecho de coordinación'?",
-                    answer: "Significa que no es un mandato de un superior dirigido a un sujeto subalterno, sino la formulación jurídica de las relaciones entre Estados soberanos e iguales, basado en la coordinación de voluntades."
-                },
-                {
-                    question: "¿Por qué se dice que el Derecho Internacional carece de un órgano legislador centralizado?",
-                    answer: "Porque la producción de normas jurídicas corre fundamentalmente por cuenta de los Estados, a través de tratados, costumbres, principios generales del derecho, y no existe un órgano supraestatal que dicte normas obligatorias para todos."
-                },
-                {
-                    question: "¿Qué papel juega la costumbre en el Derecho Internacional contemporáneo?",
-                    answer: "La costumbre sigue siendo una fuente fundamental del DIP, especialmente flexible y adaptativa, que ha sabido cambiar sus características al compás de las exigencias de la Comunidad Internacional."
-                },
-                {
-                    question: "¿Qué son las normas de ius cogens y qué característica especial tienen?",
-                    answer: "Son normas imperativas de Derecho Internacional general que prevalecen sobre cualquier otra norma por su carácter imperativo. No admiten acuerdo en contrario y solo pueden ser modificadas por una norma ulterior de igual carácter."
-                },
-                {
-                    question: "¿Cuál es la diferencia fundamental entre Derecho Internacional Público y Derecho Internacional Privado?",
-                    answer: "El DIP regula relaciones entre sujetos internacionales (Estados, organizaciones internacionales), mientras que el DIPr regula relaciones privadas con elementos extranjeros y forma parte del derecho interno de cada Estado."
-                },
-                {
-                    question: "¿Qué significa el principio 'pacta sunt servanda' y por qué es fundamental para el DIP?",
-                    answer: "Significa 'lo pactado obliga' y es la norma fundamental que da validez a todo el sistema convencional internacional, estableciendo que los tratados deben ser cumplidos de buena fe por las partes."
-                },
-                {
-                    question: "¿Cómo se explica la obligatoriedad del DIP para los Estados recién creados?",
-                    answer: "Los nuevos Estados quedan sujetos al Derecho Internacional preexistente desde su aparición, lo que demuestra que su obligatoriedad no se basa únicamente en el consentimiento, sino en la existencia misma de la comunidad internacional."
-                },
-                {
-                    question: "¿Qué papel desempeñan las organizaciones internacionales en el DIP contemporáneo?",
-                    answer: "Son sujetos de derecho internacional que participan en la creación de normas, contribuyen a la formación de la costumbre a través de sus resoluciones y prácticas, y desarrollan funciones específicas en sus áreas de competencia."
-                }
-            ],
-            2: [
-                {
-                    question: "¿Qué postulado básico comparten las teorías voluntaristas o subjetivas?",
-                    answer: "Que el fundamento de toda norma jurídica internacional radica en la voluntad de los Estados, siendo su consentimiento la base de la obligatoriedad del DIP."
-                },
-                {
-                    question: "¿En qué consiste la doctrina de la autolimitación defendida por Jellinek?",
-                    answer: "Plantea que cada Estado, conforme a sus intereses, puede decidir obligarse soberanamente frente a otros Estados, estableciendo limitaciones a su propio poder cuando lo estima necesario para entrar en el sistema internacional."
-                },
-                {
-                    question: "¿Qué crítica principal recibe la doctrina de la autolimitación?",
-                    answer: "Que si el DIP se basara exclusivamente en la voluntad de los Estados susceptible de ser unilateralmente modificada, ello conllevaría a la inestabilidad jurídica y finalmente a la negación misma del DIP."
-                },
-                {
-                    question: "¿Qué aportó la doctrina de la voluntad común de Triepel?",
-                    answer: "Surge como respuesta a la autolimitación, entendiendo que la norma internacional no puede ser producto de una voluntad autónoma y unilateral, sino de un acuerdo de voluntades que crea una norma objetiva superior."
-                },
-                {
-                    question: "¿Qué establece la doctrina de la delegación del derecho interno?",
-                    answer: "Funda las obligaciones internacionales de los Estados en el Derecho Constitucional de cada uno de ellos, lo que implicaría que un Estado podría desligarse unilateralmente de sus compromisos modificando su Constitución."
-                },
-                {
-                    question: "¿Cómo ha respondido la jurisprudencia internacional a la doctrina de la delegación del derecho interno?",
-                    answer: "La ha rechazado categóricamente, estableciendo que 'un Estado no puede invocar respecto a otro Estado su propia Constitución para desvincularse de una obligación internacional' (CPJI, Serie A/B, n.° 44)."
-                },
-                {
-                    question: "¿Qué variante de las teorías voluntaristas elaboró Lauterpacht?",
-                    answer: "La doctrina de la voluntad de la Comunidad Internacional, que entiende que es la voluntad de esta comunidad manifestada en las fuentes formales la que confiere carácter obligatorio a las normas internacionales."
-                },
-                {
-                    question: "¿Qué limitación presenta la doctrina de la voluntad de la Comunidad Internacional?",
-                    answer: "No explica el fundamento de la obligatoriedad de normas particulares del DIP elaboradas por un número reducido de Estados, y sigue centrando la explicación en la voluntad de los sujetos."
-                },
-                {
-                    question: "¿Por qué las teorías voluntaristas son consideradas insuficientes para explicar todo el DIP?",
-                    answer: "Porque existen normas de carácter consuetudinario o convencional cuya obligatoriedad no tiene como base la voluntad de los Estados, como las que obligan a nuevos Estados o las normas de ius cogens."
-                },
-                {
-                    question: "¿Qué autor defendió que 'el Derecho Internacional es en realidad un sistema de preceptos morales o reglas de cortesía internacional'?",
-                    answer: "John Austin, fundador de la Analytical School of Jurisprudence, quien negaba el carácter jurídico del DIP por carecer de un poder superior capaz de imponerlo coactivamente."
-                }
-            ],
-            3: [
-                {
-                    question: "¿Qué postulado comparten las teorías objetivas sobre el fundamento del DIP?",
-                    answer: "Que el fundamento de la obligatoriedad del DIP se encuentra fuera de la esfera de la voluntad de los Estados, en elementos objetivos como normas superiores, la sociedad internacional o principios de derecho natural."
-                },
-                {
-                    question: "¿Qué establece la doctrina positivista de Kelsen y Anzilotti?",
-                    answer: "Que la validez de la norma jurídica internacional depende de la validez de una norma jurídica preexistente, cual es la norma 'pacta sunt servanda', que constituye la norma suprema del ordenamiento internacional."
-                },
-                {
-                    question: "¿Qué crítica recibe la teoría positivista de Kelsen?",
-                    answer: "Que se encuentra desvinculada de la realidad social, aplica erróneamente procedimientos de lógica abstracta y no puede explicar la validez de fuentes no convencionales del DIP."
-                },
-                {
-                    question: "¿Qué plantea la doctrina sociológica o solidarista francesa?",
-                    answer: "Concibe la norma jurídica como un producto social, donde las necesidades y circunstancias sociales determinan el surgimiento de normas, siendo la solidaridad humana la que engendra la coacción natural que las hace obligatorias."
-                },
-                {
-                    question: "¿Qué autores destacan en la corriente sociológica del DIP?",
-                    answer: "León Duguit como fundador, seguido por Georges Scelle, Nicolas Politis, y en general la escuela sociológica francesa que incluye a Giraud, Virally, De Visscher, entre otros."
-                },
-                {
-                    question: "¿Qué entienden los iusnaturalistas como fundamento del DIP?",
-                    answer: "Que el fundamento deriva de la ley natural o ley divina, conformada por principios de justicia, postulados perpetuos, inmutables y universales deducibles de la revelación, principios morales o la recta razón."
-                },
-                {
-                    question: "¿Qué diferencia existe entre la corriente escolástica y racionalista del iusnaturalismo?",
-                    answer: "La escolástica (Vitoria, Suárez) busca los principios en textos sagrados y teología, mientras la racionalista (Grocio, Pufendorf) los deduce de la recta razón y la observación empírica, secularizando el derecho natural."
-                },
-                {
-                    question: "¿Qué representa el neoiustaturalismo en el pensamiento internacionalista contemporáneo?",
-                    answer: "Presupone ciertos valores universales y constantes formulados como principios jurídicos, compartido por autores como Verdross, Lauterpacht, Tanaka, Reuter y Brierly."
-                },
-                {
-                    question: "¿Cómo explica Accioly el fundamento del DIP desde una perspectiva iusnaturalista?",
-                    answer: "Señala que 'el verdadero fundamento del Derecho Internacional es el derecho natural [...] y la verdadera base de su obligatoriedad está en la conciencia jurídica del hombre'."
-                },
-                {
-                    question: "¿Por qué ninguna teoría objetiva por sí sola explica completamente el fundamento del DIP?",
-                    answer: "Porque dada la desigual naturaleza, origen y extensión de las normas del DIP, el fundamento de la obligatoriedad de cada una de ellas nunca podrá plantearse bajo el prisma de una sola doctrina."
-                }
-            ],
-            4: [
-                {
-                    question: "¿Cuáles son las tres carencias institucionales principales del DIP mencionadas por Pastor Ridruejo?",
-                    answer: "1) Incertidumbre y relativismo en el plano normativo; 2) Insuficiencias graves en la prevención y sanción de las violaciones; 3) Falta de coercibilidad extendida en la solución de controversias."
-                },
-                {
-                    question: "¿Qué significa que el DIP es un 'ordenamiento jurídico autónomo, originario, organizado sobre una base paritaria'?",
-                    answer: "Que constituye un sistema jurídico completo e independiente, no derivado de otro ordenamiento, basado en la igualdad soberana de los Estados que lo conforman."
-                },
-                {
-                    question: "¿Cómo se diferencia el DIP de los derechos internos en cuanto a la creación normativa?",
-                    answer: "Mientras en los derechos internos existe un órgano legislativo centralizado, en el DIP la producción de normas corre por cuenta de los Estados mismos, que son simultáneamente creadores y destinatarios de las normas."
-                },
-                {
-                    question: "¿Por qué se dice que en el DIP existe 'ausencia de un órgano jurisdiccional obligatorio'?",
-                    answer: "Porque no existe un tribunal al cual todos los Estados de la comunidad internacional se encuentren sometidos, y el sometimiento a jurisdicción internacional es enteramente voluntario por parte de los Estados."
-                },
-                {
-                    question: "¿Qué excepción existe a la regla general sobre la ausencia de coerción en el DIP?",
-                    answer: "Los artículos 42 y 94 de la Carta de la ONU, que facultan al Consejo de Seguridad a hacer uso de la fuerza cuando está en peligro la paz y seguridad internacionales y para lograr el cumplimiento de los fallos de la CIJ."
-                },
-                {
-                    question: "¿Qué otros mecanismos de sanción existen en el DIP además del uso de la fuerza?",
-                    answer: "Sanciones de carácter inorgánico como el retiro de agentes diplomáticos, ruptura de relaciones, suspensión de tratados, no reconocimiento de situaciones surgidas en violación al DI, y la presión colectiva de otros Estados."
-                },
-                {
-                    question: "¿Qué significa que en el DIP coexisten normas generales y particulares?",
-                    answer: "Que dentro del ordenamiento conviven normas de alcance universal (que obligan a toda la comunidad internacional) con normas particulares (que solo obligan a ciertos Estados o grupos de Estados)."
-                },
-                {
-                    question: "¿Qué ventaja representa que una misma norma pueda estar presente en fuentes diversas?",
-                    answer: "Reasegura la eficacia de la norma, como ocurrió en el caso Nicaragua donde, ante la imposibilidad de aplicar tratados, se recurrió supletoriamente a la costumbre internacional que recogía la misma regla."
-                },
-                {
-                    question: "¿Cómo responde Jiménez de Aréchaga a los negadores teóricos del DIP?",
-                    answer: "Argumenta que 'si por poseer el atributo de la soberanía los Estados no pudieran ver limitada su voluntad, todos estarían legitimados a hacer lo que desearen [...] necesariamente debe someterse a un orden jurídico que preserve su existencia'."
-                },
-                {
-                    question: "¿Por qué los Estados aceptan someterse al DIP a pesar de su soberanía?",
-                    answer: "Porque 'los Estados temen las reglas que pueden hacerle perder su soberanía, pero tanto como a esto temen al vacío jurídico que puede hacerles perder su existencia independiente' (Jiménez de Aréchaga)."
-                }
-            ]
-        };
-
-        // Variables globales
-        let currentChapter = 1;
-        let allFlipped = false;
-
+        // Función para voltear una tarjeta individual
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+        
         // Inicializar la aplicación
         document.addEventListener('DOMContentLoaded', function() {
-            renderFlashcards(currentChapter);
-            
-            // Configurar event listeners para los botones de capítulo
-            document.querySelectorAll('.chapter-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    // Actualizar botón activo
-                    document.querySelectorAll('.chapter-btn').forEach(btn => {
-                        btn.classList.remove('active');
+            // Configurar event listeners para los botones de sección
+            document.querySelectorAll('.control-btn').forEach(button => {
+                if (button.id !== 'flip-all-btn') {
+                    button.addEventListener('click', function() {
+                        // Actualizar botón activo
+                        document.querySelectorAll('.control-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Mostrar sección correspondiente
+                        const sectionId = this.getAttribute('data-section');
+                        document.querySelectorAll('.section').forEach(section => {
+                            section.classList.remove('active');
+                        });
+                        document.getElementById(sectionId).classList.add('active');
                     });
-                    this.classList.add('active');
-                    
-                    // Cambiar capítulo
-                    currentChapter = parseInt(this.getAttribute('data-chapter'));
-                    renderFlashcards(currentChapter);
-                });
-            });
-            
-            // Configurar botón de reinicio
-            document.getElementById('reset-btn').addEventListener('click', function() {
-                renderFlashcards(currentChapter);
-                allFlipped = false;
+                }
             });
             
             // Configurar botón de voltear todas
             document.getElementById('flip-all-btn').addEventListener('click', function() {
-                const flashcards = document.querySelectorAll('.flashcard');
-                allFlipped = !allFlipped;
+                const currentSection = document.querySelector('.section.active');
+                const flashcards = currentSection.querySelectorAll('.flashcard');
+                
+                // Determinar si debemos voltear o desvoltear todas
+                const allFlipped = Array.from(flashcards).every(card => card.classList.contains('flipped'));
                 
                 flashcards.forEach(card => {
                     if (allFlipped) {
-                        card.classList.add('flipped');
-                    } else {
                         card.classList.remove('flipped');
+                    } else {
+                        card.classList.add('flipped');
                     }
                 });
             });
             
-            // Configurar botón de Mazzuoli
-            document.getElementById('mazzuoli-btn').addEventListener('click', function() {
-                window.open('https://www.academia.edu/42923537/Curso_de_Derecho_Internacional_Publico_Valerio_de_Oliveira_Mazzuoli', '_blank');
+            // Opcional: Agregar funcionalidad para voltear todas las tarjetas con la tecla Espacio
+            document.addEventListener('keydown', function(event) {
+                if (event.code === 'Space') {
+                    event.preventDefault();
+                    const currentSection = document.querySelector('.section.active');
+                    const flashcards = currentSection.querySelectorAll('.flashcard');
+                    
+                    // Determinar si debemos voltear o desvoltear todas
+                    const allFlipped = Array.from(flashcards).every(card => card.classList.contains('flipped'));
+                    
+                    flashcards.forEach(card => {
+                        if (allFlipped) {
+                            card.classList.remove('flipped');
+                        } else {
+                            card.classList.add('flipped');
+                        }
+                    });
+                }
             });
         });
-
-        // Función para renderizar las flashcards
-        function renderFlashcards(chapter) {
-            const container = document.getElementById('flashcards-container');
-            container.innerHTML = '';
-            
-            const flashcards = flashcardsData[chapter];
-            
-            flashcards.forEach((card, index) => {
-                const flashcardElement = document.createElement('div');
-                flashcardElement.className = 'flashcard';
-                flashcardElement.innerHTML = `
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <div class="chapter-indicator">Cap. ${chapter}</div>
-                            <div class="question-text">${card.question}</div>
-                            <div class="hint">Haz clic para ver la respuesta</div>
-                        </div>
-                        <div class="flashcard-back">
-                            <div class="answer-text">${card.answer}</div>
-                        </div>
-                    </div>
-                `;
-                
-                // Añadir evento de clic para voltear la tarjeta
-                flashcardElement.addEventListener('click', function() {
-                    this.classList.toggle('flipped');
-                });
-                
-                container.appendChild(flashcardElement);
-            });
-        }
     </script>
 </body>
 </html>
